@@ -55,27 +55,39 @@ if($now >= 5 && $now <= 9){
     echo "Good night !";
 }
 
-// 3. "Different greetings according to age" Exercise
-
-if (isset($_GET['age'])){
+// 3. "Different greetings according to age and gender" Exercise
+if (isset($_GET['age']) && isset($_GET['gender'])){
 	// Form processing
-    if ($_GET['age'] < 12){
-        echo "Hello kiddo!";
+    if ($_GET['age'] < 12 && $_GET['gender'] == "Man"){
+        echo "Hello mister kiddo!";
     } elseif ($_GET['age'] >= 12 && $_GET['age'] < 18){
-        echo "Hello Teenager!";
+        echo "Hello mister Teenager!";
     } elseif ($_GET['age'] >= 18 && $_GET['age'] < 115){
-        echo "Hello Adult!";
+        echo "Hello mister Adult!";
+    } else {
+        echo "Wow! Still alive? Are you a robot, like me? Can I hug you?";
+    }
+} else {
+    // Form processing
+    if ($_GET['age'] < 12){
+        echo "Hello miss kiddo!";
+    } elseif ($_GET['age'] >= 12 && $_GET['age'] < 18){
+        echo "Hello miss Teenager!";
+    } elseif ($_GET['age'] >= 18 && $_GET['age'] < 115){
+        echo "Hello miss Adult!";
     } else {
         echo "Wow! Still alive? Are you a robot, like me? Can I hug you?";
     }
 }
+
 // Form (incomplete)
 ?>
 <form method="get" action="conditions.php">
+    <input type="radio" name="gender" value="Man">
+    <label for="gender">Man</label>
+    <input type="radio" name="gender" value="Woman">
+    <label for="gender">Woman</label>
 	<label for="age">Please type your age :</label>
 	<input type="" name="age">
 	<input type="submit" name="submit" value="Greet me now">
 </form>
-
-
-
