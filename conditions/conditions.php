@@ -65,7 +65,7 @@ if (isset($_GET['age'])){
         echo "Hello Teenager!";
     } elseif ($_GET['age'] >= 18 && $_GET['age'] < 115){
         echo "Hello Adult!";
-    } else ($_GET['age'] >= 115){
+    } else {
         echo "Wow! Still alive? Are you a robot, like me? Can I hug you?";
     }
 }
