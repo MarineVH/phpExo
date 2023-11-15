@@ -41,7 +41,7 @@ if( $room_filthiness == $possible_states[0] ){
 // 2. "Different greetings according to time" Exercise
 
 date_default_timezone_set("Europe/Brussels");
-$now = date("H"); // How to get the current time in PHP ? Google is your friend ;-)
+$now = date("H:i"); // How to get the current time in PHP ? Google is your friend ;-)
 echo "$now";
 // Test the value of $now and display the right message according to the specifications.
 if($now >= 5 && $now <= 9){
@@ -56,7 +56,9 @@ if($now >= 5 && $now <= 9){
     echo "Good night!";
 }
 
-// 3. "Different greetings according to age and gender and mothertongue" Exercise
+// 3. "Different greetings according to age and gender" Exercise
+// 4. "and mothertongue" Exercise
+
 if (isset($_GET['age']) && isset($_GET['gender']) && isset($_GET['mothertongue'])){
     if ($_GET['mothertongue'] == "yes"){
         if ($_GET['gender'] == "Man"){
@@ -123,5 +125,21 @@ if (isset($_GET['age']) && isset($_GET['gender']) && isset($_GET['mothertongue']
     <label for="gender">Woman</label></br>
 	<label for="age">Please type your age :</label>
 	<input type="" name="age">
+	<input type="submit" name="submit" value="Greet me now">
+</form>
+
+
+<?php
+// 5
+?>
+<form method="get" action="conditions.php">
+    <input type="radio" name="gender" value="Man">
+    <label for="gender">Man</label>
+    <input type="radio" name="gender" value="Woman">
+    <label for="gender">Woman</label></br>
+    <label for="age">Please type your age :</label>
+	<input type="" name="age"></br>
+    <label for="name">Please type your name :</label>
+	<input type="" name="name">
 	<input type="submit" name="submit" value="Greet me now">
 </form>
