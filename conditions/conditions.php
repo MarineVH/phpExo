@@ -131,15 +131,28 @@ if (isset($_GET['age']) && isset($_GET['gender']) && isset($_GET['mothertongue']
 
 <?php
 // 5
+if (isset($_GET['gender']) && isset($_GET['age'])){
+    if ($_GET['gender'] == "Woman"){
+        if ($_GET['age'] >= 21 && $_GET['age'] <= 40){
+	    // Form processing
+            echo "Welcome to the team !";
+        } else {
+        // Form processing
+            echo "Sorry you don't fit the criteria";
+        }
+    } else {
+        echo "Sorry you don't fit the criteria";
+    }
+}
 ?>
 <form method="get" action="conditions.php">
+    <label for="name">Please type your name :</label>
+	<input type="" name="name"></br>
     <input type="radio" name="gender" value="Man">
     <label for="gender">Man</label>
     <input type="radio" name="gender" value="Woman">
     <label for="gender">Woman</label></br>
     <label for="age">Please type your age :</label>
-	<input type="" name="age"></br>
-    <label for="name">Please type your name :</label>
-	<input type="" name="name">
+	<input type="" name="age">
 	<input type="submit" name="submit" value="Greet me now">
 </form>
